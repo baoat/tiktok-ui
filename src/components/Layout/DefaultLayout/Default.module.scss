@@ -12,6 +12,6 @@
 
 .container {
   display: flex;
-  width: 80%;
+  width: var(--default-layout-with);
   min-height: 1000px;
 }
