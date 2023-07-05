@@ -1,6 +1,8 @@
 import style from './Header.module.scss';
 import classNames from 'classnames/bind';
-import logo_tikiok from '~/imgs/download.png';
+import logo_tiktok from '~/imgs/download.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleNotch, faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(style);
 function Header() {
@@ -9,12 +11,20 @@ function Header() {
       <header className={cx('header')}>
         <div className={cx('container-header')}>
           <div className={cx('logo-tiktok')}>
-            <img className={cx('logo')} src={logo_tikiok} alt />
+            <img className={cx('logo')} src={logo_tiktok} alt="" />
           </div>
           <div className={cx('search')}>
             <form className={cx('form-search')}>
-              <input type="text" className={cx('search-input')} />
-              <button className={cx('search-btn')}>Search</button>
+              <input placeholder="Search" type="text" className={cx('search-input')} />
+
+              <button className={cx('close')}>
+                <FontAwesomeIcon icon={faCircleXmark} />
+              </button>
+              <FontAwesomeIcon className={cx('notch')} icon={faCircleNotch} />
+
+              <button className={cx('search-btn')}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </button>
             </form>
           </div>
           <div className={cx('acc')}>
