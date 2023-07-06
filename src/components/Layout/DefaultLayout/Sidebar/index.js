@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import style from './Sidebar.module.scss';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(style);
 function Sidebar() {
@@ -23,7 +24,11 @@ function Sidebar() {
           </ul>
           <div className={cx('warning-login')}>
             <p className={cx('warning-text')}>Log in to follow creators, like videos, and view comments.</p>
-            <button className={cx('btn-login')}>Login</button>
+            {/* <button className={cx('btn-login')}>Login</button>
+             */}
+            <Button outline className={cx('btn-login')}>
+              Log in
+            </Button>
           </div>
           <footer className={cx('footer')}>
             <div className={cx('container-footer')}>
