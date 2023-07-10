@@ -1,0 +1,55 @@
+.menu {
+  width: 224px;
+}
+
+.list-menu {
+  width: 100%;
+  padding: 0 0 8px 0;
+  margin: 0;
+}
+
+.item-menu {
+  height: 42px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+
+  &.separate {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  margin-top: -8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.back-btn {
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

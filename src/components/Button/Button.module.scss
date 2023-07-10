@@ -7,7 +7,7 @@
   padding: 9px 16px;
   border-radius: 4px;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   background-color: var(--white);
   border: 1px solid transparent;
@@ -80,6 +80,7 @@
 }
 
 .icon {
+  display: inline-block;
   height: 20px;
   width: 20px;
 }
