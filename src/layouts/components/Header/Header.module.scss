@@ -9,12 +9,18 @@
   --search-form-height: 100%;
   --search-btn-with: 15%;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: var(--white);
   height: var(--default-layout-header-height);
   width: 100%;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--font-family);
   padding: 0 20px;
 }
 
@@ -35,6 +41,11 @@
   width: 33.3333333%;
   height: 100%;
   padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
   display: flex;
   align-items: center;
 }
@@ -62,6 +73,24 @@
   font-size: 1.9rem;
   margin-left: 16px;
   background-color: transparent;
+  position: relative;
+}
+
+.sup {
+  background-color: var(--primary);
+  border-radius: 10px;
+  height: 20px;
+  position: absolute;
+  left: 18px;
+  top: -6px;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 20px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .user-avatar {

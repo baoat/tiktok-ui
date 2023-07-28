@@ -1,0 +1,76 @@
+.wrapper {
+  position: relative;
+  padding: 16px 0px;
+  color: rgba(22, 24, 35, 0.75);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.093px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0px;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    transform: scaleY(0.5);
+  }
+
+  .title {
+    padding: 0 8px;
+    font-family: var(--font-family);
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+  }
+}
+
+.btn-see-more {
+  background: transparent;
+  border: none;
+  padding: 0px 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  min-height: 10px;
+
+  .title-see-more {
+    font-family: var(--font-family);
+    color: rgb(254, 44, 85);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.btn-login {
+  width: 100%;
+  border: 1px solid red;
+  color: red;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.following-account {
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-family: var(--font-family);
+  }
+}

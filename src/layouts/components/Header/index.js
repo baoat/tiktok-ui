@@ -1,6 +1,3 @@
-import style from './Header.module.scss';
-import classNames from 'classnames/bind';
-import logo_tiktok from '~/acsets/img/download.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowRightFromBracket,
@@ -12,12 +9,18 @@ import {
   faKeyboard,
   faPlus,
 } from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
-import Button from '~/components/Button';
-import Menu from '~/components/Popper/Menu';
 import { faBookmark, faUser } from '@fortawesome/free-regular-svg-icons';
 import { Inbox, Message } from '~/components/icons';
+import { Link } from 'react-router-dom';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
+
+import config from '~/config';
+import style from './Header.module.scss';
+import classNames from 'classnames/bind';
+import logo_tiktok from '~/acsets/img/download.png';
+import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 import Search from '../Search';
 
 const cx = classNames.bind(style);
@@ -28,13 +31,25 @@ const MENU_ITEM = [
     children: {
       title: 'Language',
       data: [
-        { code: 'en', title: 'English' },
-        { code: 'vn', title: 'Tiếng Việt' },
-        { code: 'vn', title: 'Tiếng Việt' },
-        { code: 'vn', title: 'Tiếng Việt' },
-        { code: 'vn', title: 'Tiếng Việt' },
-        { code: 'vn', title: 'Tiếng Việt' },
-        { code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'en', title: 'English' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vn', title: 'Tiếng Việt' },
       ],
     },
   },
@@ -91,7 +106,9 @@ function Header() {
         <div className={cx('container-header')}>
           {/* Logo tiktok */}
           <div className={cx('logo-tiktok')}>
-            <img className={cx('logo')} src={logo_tiktok} alt="" />
+            <Link className={cx('logo-link')} to={config.routes.home}>
+              <img className={cx('logo')} src={logo_tiktok} alt="" />
+            </Link>
           </div>
           {/* Search */}
           <Search />
@@ -99,9 +116,6 @@ function Header() {
           <div className={cx('acc')}>
             {currentUser ? (
               <>
-                {/* <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudArrowUp} />
-                </button> */}
                 <Button leftIcon={<FontAwesomeIcon icon={faPlus} />} href="#" outline_text>
                   Upload
                 </Button>
@@ -113,6 +127,7 @@ function Header() {
                 <Tippy content="inBox">
                   <button className={cx('action-btn')}>
                     <Inbox />
+                    <div className={cx('sup')}>6</div>
                   </button>
                 </Tippy>
               </>

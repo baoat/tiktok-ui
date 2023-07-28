@@ -1,0 +1,60 @@
+.footer {
+  border-top: 1px solid rgba(22, 24, 35, 0.12);
+  padding: 16px 0px;
+}
+
+.connect {
+  margin-bottom: 8px;
+}
+
+.container-footer {
+  // padding: 0 2rem;
+}
+
+.item-connect {
+  margin: 5px 5px 0 0;
+  text-decoration: none;
+  color: rgba(22, 24, 35, 0.5);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  display: inline-block;
+}
+
+.btn-create {
+  padding: 0;
+  position: relative;
+  margin-bottom: 30px;
+  padding-right: 8px;
+  text-align: center;
+  height: 50px;
+}
+
+.wrapper {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.create-img {
+  height: 52px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  max-width: 200px;
+
+  &:hover {
+    font-size: 20px;
+  }
+}

@@ -46,12 +46,14 @@
 
 .search-input {
   // width: var(--default-layout-with, 90%);
+  padding-right: 45px;
   flex: 1;
   height: 100%;
   border: none;
   background: #f1f1f2;
   outline: none;
   font-size: 1.6rem;
+  font-family: var(--font-family);
   caret-color: var(--primary);
 
   &:not(:placeholder-shown) ~ .search-btn {

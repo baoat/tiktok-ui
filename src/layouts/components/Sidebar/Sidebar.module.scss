@@ -4,12 +4,17 @@
 }
 
 .sidebar {
-  width: 20%;
+  width: 320px;
   min-height: 500px;
+  padding: 20px 0px 26px 8px;
+  overflow-y: auto;
+  height: 676px;
 }
 
 .container-sidebar {
+  overflow-y: auto;
   width: 100%;
+  height: 500px;
 }
 
 .me-auto {
@@ -43,32 +48,4 @@
   color: rgba(22, 24, 35, 0.5);
   font-size: 16px;
   line-height: 21px;
-}
-
-.btn-login {
-  width: 100%;
-  border: 1px solid red;
-  color: red;
-  background-color: white;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.connect {
-  margin-bottom: 8px;
-}
-
-.container-footer {
-  padding: 0 2rem;
-}
-
-.item-connect {
-  margin: 5px 5px 0 0;
-  text-decoration: none;
-  color: rgba(22, 24, 35, 0.5);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  display: inline-block;
 }

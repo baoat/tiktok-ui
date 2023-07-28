@@ -6,7 +6,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import style from './Search.module.scss';
 
-import * as searchService from '~/apiServices/searchService';
+import * as searchService from '~/services/searchService';
 import AccountItem from '~/components/AccountItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hook';
@@ -53,6 +53,13 @@ function Search() {
     setSearchResult([]);
   };
 
+  const handleChange = (e) => {
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(' ')) {
+      setSearchValue(searchValue);
+    }
+  };
+
   return (
     <HeadlessTippy
       interactive
@@ -74,7 +81,7 @@ function Search() {
           <input
             ref={inputRef}
             value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
+            onChange={handleChange}
             placeholder="Search"
             type="text"
             className={cx('search-input')}
@@ -88,7 +95,8 @@ function Search() {
           )}
 
           {loading && <FontAwesomeIcon className={cx('notch')} icon={faCircleNotch} />}
-          <button className={cx('search-btn')}>
+          {/* btn sreach */}
+          <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </form>

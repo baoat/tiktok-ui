@@ -3,6 +3,7 @@
   align-items: center;
   cursor: pointer;
   padding: 6px 16px;
+  transition: background-color 200ms ease-in-out 0s;
   &:hover {
     background: rgba(22, 24, 35, 0.03);
   }
