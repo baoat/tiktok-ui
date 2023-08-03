@@ -13,6 +13,7 @@
 .container {
   display: flex;
   width: var(--default-layout-with);
+  padding: var(--default-layout-container);
   min-height: 1000px;
   margin-top: var(--default-layout-header-height);
 }

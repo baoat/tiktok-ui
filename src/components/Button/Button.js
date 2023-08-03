@@ -13,6 +13,7 @@ function Button({
   large = false,
   outline_text = false,
   rounded = false,
+  a = false,
   className,
   leftIcon,
   rightIcon,
@@ -30,6 +31,7 @@ function Button({
     large,
     outline_text,
     rounded,
+    a,
   });
 
   const props = {
@@ -64,6 +66,7 @@ Button.prototype = {
   large: PropTypes.bool,
   outline_text: PropTypes.bool,
   rounded: PropTypes.bool,
+  a: PropTypes.bool,
 
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,

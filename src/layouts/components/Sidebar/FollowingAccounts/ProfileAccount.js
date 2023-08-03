@@ -17,7 +17,6 @@ function ProfileAccount({ result }) {
   return (
     <Tippy
       delay={[800, 0]}
-      offset={[-20, 0]}
       interactive
       placement="bottom-end"
       render={(attrs) => (

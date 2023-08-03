@@ -1,6 +1,6 @@
 .search,
 .search-result {
-  width: 390px;
+  width: 516px;
 }
 
 .search-title {
@@ -11,9 +11,9 @@
 }
 
 .search {
-  // width: 33.3333333%;
-  --search-btn-with: 15%;
-  height: 75%;
+  --search-btn-with: 52px;
+
+  position: relative;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -45,7 +45,6 @@
 }
 
 .search-input {
-  // width: var(--default-layout-with, 90%);
   padding-right: 45px;
   flex: 1;
   height: 100%;

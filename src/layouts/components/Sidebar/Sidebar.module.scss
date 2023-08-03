@@ -4,11 +4,13 @@
 }
 
 .sidebar {
-  width: 320px;
+  width: var(--default-layout-right);
   min-height: 500px;
+  height: 676px;
   padding: 20px 0px 26px 8px;
   overflow-y: auto;
-  height: 676px;
+  scrollbar-gutter: stable;
+  position: fixed;
 }
 
 .container-sidebar {

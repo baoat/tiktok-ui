@@ -107,7 +107,7 @@ function Header() {
           {/* Logo tiktok */}
           <div className={cx('logo-tiktok')}>
             <Link className={cx('logo-link')} to={config.routes.home}>
-              <img className={cx('logo')} src={logo_tiktok} alt="" />
+              <img width={118} height={35} className={cx('logo')} src={logo_tiktok} alt="" />
             </Link>
           </div>
           {/* Search */}

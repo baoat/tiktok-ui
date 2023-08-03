@@ -1,11 +1,10 @@
 import * as accounts from '~/services/accounts';
 import ProfileAccount from './ProfileAccount';
-import AccountItem from '~/components/AccountItem/AccountItem';
 
 import classNames from 'classnames/bind';
 import style from './FollowingAccount.module.scss';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Button from '~/components/Button/Button';
 

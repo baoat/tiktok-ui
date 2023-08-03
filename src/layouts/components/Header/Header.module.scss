@@ -5,7 +5,7 @@
 
 // header - wrapper
 .header {
-  --search-top-spacer: 16%;
+  --search-top-spacer: 7px;
   --search-form-height: 100%;
   --search-btn-with: 15%;
 
@@ -27,6 +27,7 @@
 .container-header {
   height: 100%;
   width: var(--default-layout-with);
+  padding: var(--default-layout-container);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,13 +35,11 @@
 
 // Logo tiktok
 .logo {
-  width: 30%;
+  fill: currentColor;
 }
 
 .logo-tiktok {
-  width: 33.3333333%;
   height: 100%;
-  padding: 10px;
   display: flex;
   align-items: center;
 }
@@ -55,7 +54,6 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  width: 33.3333333%;
   height: 100%;
   padding: 10px;
 }

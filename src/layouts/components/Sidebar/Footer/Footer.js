@@ -11,7 +11,7 @@ function Footer() {
     <footer className={cx('footer')}>
       <div className={cx('container-footer')}>
         <div className={cx('create-effects')}>
-          <Button href="#" outline-text className={cx('btn-create')}>
+          <Button href="#" outline_text className={cx('btn-create')}>
             <div className={cx('wrapper')}>
               <img src={create} alt="" className={cx('create-img')} />
               <div className={cx('title')}>
