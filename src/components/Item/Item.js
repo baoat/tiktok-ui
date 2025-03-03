@@ -1,28 +1,19 @@
 import classNames from 'classnames/bind';
 import style from './Item.module.scss';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Button from '../Button/Button';
-import video from '~/acsets/img/23683386842894528144247647386872177500821145n-11335981.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faBookmark,
-  faCommentDots,
-  faEllipsisVertical,
-  faHeart,
-  faLeaf,
-  faPlay,
-  faShare,
-} from '@fortawesome/free-solid-svg-icons';
-import { HeartIcon, VoiceIcon } from '../icons';
-import HeartAction from './HeartAction/HeartAction';
+import { faBookmark, faCommentDots, faShare } from '@fortawesome/free-solid-svg-icons';
+import { HeartIcon } from '../icons';
+import HeartAction from './VideoPlayer/HeartAction/HeartAction';
 import { useState } from 'react';
-import HeartActionVideo from './HeartActionVideo/HeartActionVideo';
+import VideoPlayer from './VideoPlayer/VideoPlayer';
+import video from '../../acsets/video/Download.mp4';
 
 const cx = classNames.bind(style);
 
 function Item({ data }) {
   const [heart, setHeart] = useState(true);
-  const [show, setShow] = useState(false);
 
   // setTimeout(() => {
   //   setShow(false);
@@ -32,19 +23,8 @@ function Item({ data }) {
   const handleSetHeart = () => {
     setHeart(!heart);
   };
-  const handleSetHeartVideo = (e) => {
-    console.log('ee: ', e);
-    setHeart(false);
-    setShow(true);
-    e.preventDefault();
-    const heartActionVideos = document.querySelectorAll('#heartActionVideo');
-    console.log('value: ', heartActionVideos);
-    heartActionVideos.forEach(function (heartActionVideo) {
-      heartActionVideo.style.position = 'absolute';
-      heartActionVideo.style.top = `${e.clientY - e.currentTarget.getBoundingClientRect().top}px`;
-      heartActionVideo.style.left = `${e.clientX - e.currentTarget.getBoundingClientRect().left}px`;
-    });
-  };
+
+  console.log(heart);
 
   return (
     <div className={cx('item')}>
@@ -70,28 +50,7 @@ function Item({ data }) {
           </div>
         </div>
         <div className={cx('body')}>
-          <div id="wrapper-video" onDoubleClick={handleSetHeartVideo} className={cx('wrapper-video')}>
-            <HeartActionVideo show={show} />
-            <canvas className={cx('canvas')} width={56.25} height={100} />
-            <div className={cx('video')}>
-              <img src={video} alt="" className={cx('video-img')} />
-            </div>
-            <div className={cx('play')}>
-              <button className={cx('btn-play')}>
-                <FontAwesomeIcon className={cx('play-icon')} icon={faPlay} />
-              </button>
-            </div>
-            <div className={cx('voice')}>
-              <button className={cx('btn-voice')}>
-                <VoiceIcon className={cx('voice-icon')} />
-              </button>
-            </div>
-            <div className={cx('vertical')}>
-              <button className={cx('btn-vertical')}>
-                <FontAwesomeIcon className={cx('vertical-icon')} icon={faEllipsisVertical} />
-              </button>
-            </div>
-          </div>
+          <VideoPlayer videoSrc={video} onStatusChange={setHeart} />
           <div className={cx('action')}>
             <button onClick={handleSetHeart} className={cx('btn-action')}>
               <span className={cx('wrapper-icon')}>{heart ? <HeartIcon /> : <HeartAction />}</span>
