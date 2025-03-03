@@ -26,6 +26,10 @@
     .active-icon {
       display: flex;
     }
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   &:hover {

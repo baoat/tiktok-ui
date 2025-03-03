@@ -143,9 +143,11 @@ function Header() {
               {currentUser ? (
                 <img className={cx('user-avatar')} src="https://i.imgur.com/u2p0Xm3h.jpg" alt="Nguyen Van A" />
               ) : (
-                <i className={cx('cover')}>
-                  <FontAwesomeIcon icon={faEllipsisVertical} />
-                </i>
+                <>
+                  <i className={cx('cover')}>
+                    <FontAwesomeIcon icon={faEllipsisVertical} />
+                  </i>
+                </>
               )}
             </Menu>
           </div>

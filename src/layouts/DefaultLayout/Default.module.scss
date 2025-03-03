@@ -17,3 +17,10 @@
   min-height: 1000px;
   margin-top: var(--default-layout-header-height);
 }
+
+.wrapper-children {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 239px;
+}

@@ -20,12 +20,10 @@ function Home() {
   }, []);
 
   return (
-    <div className={cx('wrapper')}>
-      <div className={cx('colum-container')}>
-        {searchResult.map((result) => (
-          <Item key={result.id} data={result} />
-        ))}
-      </div>
+    <div className={cx('colum-container')}>
+      {searchResult.map((result) => (
+        <Item key={result.id} data={result} />
+      ))}
     </div>
   );
 }
