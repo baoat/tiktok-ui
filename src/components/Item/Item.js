@@ -24,8 +24,6 @@ function Item({ data }) {
     setHeart(!heart);
   };
 
-  console.log(heart);
-
   return (
     <div className={cx('item')}>
       <img className={cx('avatar')} src={data.avatar} alt={data.full_name} />

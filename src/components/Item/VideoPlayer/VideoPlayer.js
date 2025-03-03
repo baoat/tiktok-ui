@@ -94,7 +94,7 @@ function VideoPlayer({ videoSrc, onStatusChange }) {
       <div className={cx('video')}>
         {/* hiển thị video */}
         <video
-          style={{ width: '100%', height: '100%' }}
+          // style={{ width: '100%', height: '100%', objectFit: 'cover', overflow: 'hidden' }}
           ref={videoRef}
           onEnded={handleShowReplay}
           disablePictureInPicture
