@@ -8,21 +8,36 @@ import { useEffect, useRef, useState } from 'react';
 
 const cx = classNames.bind(style);
 
-function VideoPlayer({ videoSrc, onStatusChange }) {
+function VideoPlayer({ videoSrc, onStatusChange, isMuted, setIsMuted }) {
   // biến
   const videoRef = useRef(null);
   const [showReplay, setShowReplay] = useState(false);
   const [show, setShow] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
 
-  //
+  //video tự động phát khi lướt tới
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      video.muted = true; // Bật chế độ tắt tiếng để trình duyệt cho phép tự động phát
-      video.play().catch((error) => console.log('Autoplay failed:', error));
-    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.currentTime = 0; // Reset video về 0 giây
+          video.muted = isMuted; // Ban đầu tắt tiếng
+          video.play().catch((error) => console.log('Autoplay failed:', error));
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    if (video) observer.observe(video);
+
+    return () => {
+      if (video) {
+        observer.unobserve(video);
+      }
+    };
   }, []);
 
   //chức năng
@@ -50,6 +65,7 @@ function VideoPlayer({ videoSrc, onStatusChange }) {
     } else {
       videoRef.current.play();
       setIsPlaying(true);
+      setShowReplay(false);
     }
   };
 
@@ -73,9 +89,14 @@ function VideoPlayer({ videoSrc, onStatusChange }) {
     }
   };
 
-  const handleShowReplay = () => setShowReplay(true);
+  const handleShowReplay = () => {
+    setShowReplay(true);
+    videoRef.current.pause();
+    setIsPlaying(false);
+  };
 
-  const handleReplay = () => {
+  const handleReplay = (event) => {
+    event.stopPropagation();
     if (videoRef.current.paused || videoRef.current.ended) {
       videoRef.current.play();
       setIsPlaying(true);
@@ -94,7 +115,7 @@ function VideoPlayer({ videoSrc, onStatusChange }) {
       <div className={cx('video')}>
         {/* hiển thị video */}
         <video
-          // style={{ width: '100%', height: '100%', objectFit: 'cover', overflow: 'hidden' }}
+          style={{ width: '100%', height: '100%', overflow: 'hidden' }}
           ref={videoRef}
           onEnded={handleShowReplay}
           disablePictureInPicture
@@ -119,11 +140,13 @@ function VideoPlayer({ videoSrc, onStatusChange }) {
           <FontAwesomeIcon className={cx('vertical-icon')} icon={faEllipsisVertical} />
         </button>
       </div>
-      <div className={cx('replay')}>
-        <button onClick={handleReplay} className={cx('btn-replay')}>
-          {showReplay && <ReplayIcon />}
-        </button>
-      </div>
+      {showReplay && (
+        <div className={cx('replay')}>
+          <button onClick={handleReplay} className={cx('btn-replay')}>
+            <ReplayIcon />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

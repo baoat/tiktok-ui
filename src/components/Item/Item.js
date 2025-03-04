@@ -12,7 +12,7 @@ import video from '../../acsets/video/Download.mp4';
 
 const cx = classNames.bind(style);
 
-function Item({ data }) {
+function Item({ data, isMuted, setIsMuted }) {
   const [heart, setHeart] = useState(true);
 
   // setTimeout(() => {
@@ -48,7 +48,13 @@ function Item({ data }) {
           </div>
         </div>
         <div className={cx('body')}>
-          <VideoPlayer videoSrc={video} onStatusChange={setHeart} />
+          {/* <VideoPlayer
+            videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
+            onStatusChange={setHeart}
+            isMuted={isMuted}
+            setIsMuted={setIsMuted}
+          /> */}
+          <VideoPlayer videoSrc={video} onStatusChange={setHeart} isMuted={isMuted} setIsMuted={setIsMuted} />
           <div className={cx('action')}>
             <button onClick={handleSetHeart} className={cx('btn-action')}>
               <span className={cx('wrapper-icon')}>{heart ? <HeartIcon /> : <HeartAction />}</span>

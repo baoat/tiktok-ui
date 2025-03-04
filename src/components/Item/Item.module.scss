@@ -14,7 +14,9 @@
 
 .content {
   margin-left: 12px;
-  width: 624px;
+  min-width: none;
+  max-width: 624px;
+  width: auto;
   height: 100%;
 }
 
