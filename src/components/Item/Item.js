@@ -14,14 +14,21 @@ const cx = classNames.bind(style);
 
 function Item({ data, isMuted, setIsMuted }) {
   const [heart, setHeart] = useState(true);
-
-  // setTimeout(() => {
-  //   setShow(false);
-  // }, 1500);
+  const [heartNumber, setHeartNumber] = useState(2222);
 
   //Handle
-  const handleSetHeart = () => {
-    setHeart(!heart);
+  const handleAddHeart = () => {
+    if (heart) {
+      setHeartNumber(heartNumber + 1);
+      setHeart(!heart);
+    }
+  };
+
+  const handleMinusHeart = () => {
+    if (!heart) {
+      setHeartNumber(heartNumber - 1);
+      setHeart(!heart);
+    }
   };
 
   return (
@@ -54,12 +61,24 @@ function Item({ data, isMuted, setIsMuted }) {
             isMuted={isMuted}
             setIsMuted={setIsMuted}
           /> */}
-          <VideoPlayer videoSrc={video} onStatusChange={setHeart} isMuted={isMuted} setIsMuted={setIsMuted} />
+          <VideoPlayer videoSrc={video} onStatusChange={handleAddHeart} isMuted={isMuted} setIsMuted={setIsMuted} />
           <div className={cx('action')}>
-            <button onClick={handleSetHeart} className={cx('btn-action')}>
-              <span className={cx('wrapper-icon')}>{heart ? <HeartIcon /> : <HeartAction />}</span>
-              <strong className={cx('number-value')}>222</strong>
-            </button>
+            {heart ? (
+              <button onClick={handleAddHeart} className={cx('btn-action')}>
+                <span className={cx('wrapper-icon')}>
+                  <HeartIcon />
+                </span>
+                <strong className={cx('number-value')}>{heartNumber}</strong>
+              </button>
+            ) : (
+              <button onClick={handleMinusHeart} className={cx('btn-action')}>
+                <span className={cx('wrapper-icon')}>
+                  <HeartAction />
+                </span>
+                <strong className={cx('number-value')}>{heartNumber}</strong>
+              </button>
+            )}
+
             <button className={cx('btn-action')}>
               <span className={cx('wrapper-icon')}>
                 <FontAwesomeIcon className={cx('action-icon')} icon={faCommentDots} />

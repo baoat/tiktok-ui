@@ -46,7 +46,7 @@ function VideoPlayer({ videoSrc, onStatusChange, isMuted, setIsMuted }) {
     e.preventDefault();
     e.stopPropagation();
     setShow(true);
-    onStatusChange(false);
+    onStatusChange();
     setTimeout(() => setShow(false), 1500);
     const heartActionVideos = document.querySelectorAll('#heartActionVideo');
     console.log('value: ', heartActionVideos);
@@ -115,7 +115,7 @@ function VideoPlayer({ videoSrc, onStatusChange, isMuted, setIsMuted }) {
       <div className={cx('video')}>
         {/* hiển thị video */}
         <video
-          style={{ width: '100%', height: '100%', overflow: 'hidden' }}
+          style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '16px' }}
           ref={videoRef}
           onEnded={handleShowReplay}
           disablePictureInPicture

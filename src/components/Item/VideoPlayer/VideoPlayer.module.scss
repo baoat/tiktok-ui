@@ -17,6 +17,7 @@
   background-color: black;
   display: flex;
   align-items: center;
+  border-radius: 18px;
 
   &:hover .play {
     opacity: unset;
@@ -32,6 +33,7 @@
     width: 100%;
     height: 100%;
     display: contents;
+    border-radius: 18px;
   }
 
   .play {
@@ -91,6 +93,7 @@
     padding: 10px;
     width: 100%;
     height: 100%;
+    border-radius: 18px;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 99999;
 
